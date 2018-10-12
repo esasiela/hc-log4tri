@@ -18,8 +18,9 @@ public class LftStartupServlet extends HttpServlet {
 
     private Log log = LogFactory.getLog(LftStartupServlet.class);
 
-    private static final String APPLICATION_NAME = "log4tri";
-    private static final String MODULE_NAME = "webapp";
+    // configured by servlet init parameters "application.name" and "module.name"
+    private static String APPLICATION_NAME = "";
+    private static String MODULE_NAME = "";
 
     @Override
     public void destroy() {
@@ -30,6 +31,9 @@ public class LftStartupServlet extends HttpServlet {
     @Override
     public void init(ServletConfig config) throws ServletException {
         super.init(config);
+        APPLICATION_NAME = config.getInitParameter("application.name");
+        MODULE_NAME = config.getInitParameter("module.name");
+
         log.info(APPLICATION_NAME + " " + MODULE_NAME + " starting up");
 
         LftConfig.load(APPLICATION_NAME, MODULE_NAME);

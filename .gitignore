@@ -28,5 +28,3 @@ target/
 .classpath
 .project
 
-# keep those jndi credentials out of the source repository
-*/META-INF/context.xml
