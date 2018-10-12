@@ -10,7 +10,7 @@
 
 	<servlet>
 		<servlet-name>Log4Tri Startup Servlet</servlet-name>
-		<servlet-class>com.hedgecourt.log4tri.jsf.LftStartupServlet</servlet-class>
+		<servlet-class>com.hedgecourt.log4tri.web.jsf.LftStartupServlet</servlet-class>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 
